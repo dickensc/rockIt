@@ -18,7 +18,7 @@ import com.googlecode.rockit.exception.SolveException;
 public abstract class ILPConnector
 {
     public static enum ILPSolver {
-        GUROBI, CPLEX, SCIP
+        GUROBI, SCIP
     };
 
     // helper for adding multible constraints

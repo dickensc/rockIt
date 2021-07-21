@@ -56,11 +56,6 @@
             <artifactId>gurobi</artifactId>
             <version>rockit</version>
         </dependency>
-<!--         <dependency>
-            <groupId>com.cplex</groupId>
-            <artifactId>cplex</artifactId>
-            <version>rockit</version>
-        </dependency> -->
         <dependency>
 			<groupId>args4j</groupId>
 			<artifactId>args4j</artifactId>

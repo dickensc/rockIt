@@ -23,7 +23,6 @@ import com.googlecode.rockit.app.solver.thread.FormulaRestrictionBuilder;
 import com.googlecode.rockit.app.solver.thread.RestrictionBuilder;
 import com.googlecode.rockit.conn.ilp.GurobiConnector;
 import com.googlecode.rockit.conn.ilp.ILPConnector;
-import com.googlecode.rockit.conn.ilp.cplex.CplexConnector;
 import com.googlecode.rockit.conn.ilp.scip.ScipConnector;
 import com.googlecode.rockit.conn.sql.MySQLConnector;
 import com.googlecode.rockit.conn.sql.SQLQueryGenerator;
@@ -267,9 +266,6 @@ public class StandardSolver extends AbstractSolver
         switch(Parameters.ILP_SOLVER) {
             case GUROBI:
                 ilpCon = new GurobiConnector();
-            break;
-            case CPLEX:
-                ilpCon = new CplexConnector();
             break;
             case SCIP:
                 ilpCon = new ScipConnector();
