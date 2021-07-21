@@ -402,7 +402,9 @@ public class StandardSolver extends AbstractSolver
             // (when constraint sampling is enabled and loopCount >=
             // numberOfRounds
             // constraintSampling = !Parameters.CONSTRAINT_SAMPLING_ACTIVATE ||
-            // (loopCount <= Parameters.CONSTRAINT_SAMPLING_ROUNDS);
+            if (loopCount <= Parameters.MAX_OPTIMIZATION_ROUNDS) {
+                break;
+            }
         } while(hasChanged);
         // close logfile
         this.closeLogFile();

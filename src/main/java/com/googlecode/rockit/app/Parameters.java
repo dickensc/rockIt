@@ -51,6 +51,11 @@ public class Parameters
     public static double    TIME_LIMIT                               = -1;
 
     /**
+     * The maximum number of constraint sampling rounds, i.e., calls to the Gurobi solver. 
+     */
+    public static int       MAX_OPTIMIZATION_ROUNDS                  = Integer.MAX_VALUE;
+
+    /**
      * Sets the gap of the Gurobi solver. This gives exacter (value around 0.000001) but slower or
      * more approximative (value 0.01) but faster solutions.
      * 
@@ -209,6 +214,7 @@ public class Parameters
         }
         Parameters.GAP = Double.parseDouble(properties.getProperty("gap"));
         Parameters.TIME_LIMIT = Long.parseLong(properties.getProperty("time_limit"));
+        Parameters.MAX_OPTIMIZATION_ROUNDS = Integer.parseInt(properties.getProperty("max_optimization_rounds"));
         if(properties.getProperty("debug_output").equalsIgnoreCase("true")) {
             Parameters.DEBUG_OUTPUT = true;
         } else {
