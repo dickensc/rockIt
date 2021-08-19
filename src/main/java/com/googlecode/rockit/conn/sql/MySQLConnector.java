@@ -96,11 +96,19 @@ public class MySQLConnector
         String database = Parameters.SQL_DATABASE;
         // delete all tables
         try {
+            if(Parameters.DEBUG_OUTPUT)
+                System.out.println("SQLQuery: CREATE Database `" + database + "`");
             this.executeQuery("CREATE Database `" + database + "`");
         } catch(DatabaseException e) {
+            if(Parameters.DEBUG_OUTPUT)
+                System.out.println("SQLQuery: DROP Database IF EXISTS `" + database + "`");
             this.executeQuery("DROP Database IF EXISTS `" + database + "` ");
+            if(Parameters.DEBUG_OUTPUT)
+                System.out.println("SQLQuery: CREATE Database `" + database + "`");
             this.executeQuery("CREATE Database `" + database + "`");
         }
+        if(Parameters.DEBUG_OUTPUT)
+            System.out.println("SQLQuery: USE `" + database + "`");
         this.executeQuery("USE `" + database + "`");
 
     }
